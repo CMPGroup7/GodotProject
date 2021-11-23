@@ -7,9 +7,9 @@
 extents = Vector2( 8, 14 )
 
 [node name="PlayerNode" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="PlayerK_body" type="KinematicBody2D" parent="."]
-script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="PlayerK_body"]
 texture = ExtResource( 1 )
