@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tilemap.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="TileNode2D" type="Node2D"]
+
+[node name="RedOutsideSprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RedOutsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedOutsideSprite/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="RedInsideSprite" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+frame = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RedInsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedInsideSprite/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="BlueOutsideSprite" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+frame = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueOutsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueOutsideSprite/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="BlueInsideSprite" type="Sprite" parent="."]
+position = Vector2( 192, 0 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+frame = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueInsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueInsideSprite/StaticBody2D"]
+shape = SubResource( 1 )

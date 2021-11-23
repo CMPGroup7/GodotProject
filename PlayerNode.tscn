@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://jjokji.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 14 )
+
+[node name="PlayerNode" type="Node2D"]
+
+[node name="PlayerK_body" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="PlayerK_body"]
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerK_body"]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="PlayerK_body"]
