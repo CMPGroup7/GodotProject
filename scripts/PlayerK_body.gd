@@ -1,20 +1,16 @@
-extends KinematicBody2D
+extends Node2D
 
-const gravity = 200.0
-const WALK_SPEED = 200
-const JUMP_FORCE = 100
 
-var velocity = Vector2()
 
-func _physics_process(delta):
-	velocity.y += delta * gravity
+func _process(delta):
+	
 	if Input.is_action_pressed("ui_up"):
-		velocity.y = -JUMP_FORCE
+		self.visible = false
 	if Input.is_action_pressed("ui_left"):
-		velocity.x = -WALK_SPEED
+		self.visible = false
 	elif Input.is_action_pressed("ui_right"):
-		velocity.x =  WALK_SPEED
+		self.visible = false
 	else:
-		velocity.x = 0
-	velocity = move_and_slide(velocity, Vector2.UP)
-	move_and_slide(velocity, Vector2(0, -1))
+		self.visible = true
+
+	
