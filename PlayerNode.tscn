@@ -1,20 +1,58 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://jjokji.png" type="Texture" id=1]
+[ext_resource path="res://Images/Player_Image/Player_front.png" type="Texture" id=1]
+[ext_resource path="res://scripts/PlayerK_body.gd" type="Script" id=2]
+[ext_resource path="res://Images/Player_Image/Player_walk_rl.png" type="Texture" id=3]
+[ext_resource path="res://PlayerR_body.gd" type="Script" id=4]
+[ext_resource path="res://PlayerNode.gd" type="Script" id=5]
+[ext_resource path="res://Images/Player_Image/Player_walk_ll.png" type="Texture" id=6]
+[ext_resource path="res://PlayerL_body.gd" type="Script" id=7]
+[ext_resource path="res://Images/Player_Image/Player_walk_lr.png" type="Texture" id=8]
+[ext_resource path="res://Images/Player_Image/Player_walk_rr.png" type="Texture" id=9]
+[ext_resource path="res://Images/Player_Image/Player_jump.png" type="Texture" id=10]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 14 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.0
 
-[node name="PlayerNode" type="Node2D"]
+[node name="PlayerNode" type="KinematicBody2D"]
+script = ExtResource( 5 )
 
-[node name="PlayerK_body" type="KinematicBody2D" parent="."]
+[node name="PlayerK_body" type="Node2D" parent="."]
+script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="PlayerK_body"]
+[node name="Player_front" type="Sprite" parent="PlayerK_body"]
+scale = Vector2( 0.16, 0.16 )
 texture = ExtResource( 1 )
-hframes = 2
-vframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerK_body"]
+[node name="Player_jump" type="Sprite" parent="PlayerK_body"]
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 10 )
+
+[node name="PlayerR_body" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Player_right_l" type="Sprite" parent="PlayerR_body"]
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 3 )
+
+[node name="Player_right_r" type="Sprite" parent="PlayerR_body"]
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 9 )
+
+[node name="PlayerL_body" type="Node2D" parent="."]
+position = Vector2( -1, 0 )
+script = ExtResource( 7 )
+
+[node name="Player_left_l" type="Sprite" parent="PlayerL_body"]
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 6 )
+
+[node name="Player_left_r" type="Sprite" parent="PlayerL_body"]
+scale = Vector2( 0.16, 0.16 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="PlayerK_body"]
+[node name="Camera2D" type="Camera2D" parent="."]
