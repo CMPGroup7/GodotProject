@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Door.png" type="Texture" id=1]
+
+[node name="Door" type="Area2D"]
+scale = Vector2( 0.720281, 0.720281 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -36, -45, 30, -45, 35, 32, -35, 32 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.140845, 0.140845 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 510.862, 655.32 )

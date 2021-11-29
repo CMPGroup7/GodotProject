@@ -52,5 +52,11 @@ func _physics_process(delta):
 	move_and_slide(velocity, Vector2(0, -1))
 
 
+func _on_Door_body_entered(body):
+	get_tree().change_scene("res://Level2.tscn")
+	
+func _on_Door2_body_entered(body):
+	get_tree().change_scene("res://Level3.tscn")
 
-
+func _on_Door3_body_entered(body):
+	get_tree().change_scene("res://Level4.tscn")
