@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+class_name PlayerNode
+
 const gravity = 200.0
 const WALK_SPEED = 100
 const JUMP_FORCE = 125
@@ -45,18 +47,21 @@ func _physics_process(delta):
 			
 	# go to return point when player goes out of the screen       
 	if self.get_position().y > get_viewport_rect().size.y:
-		self.set_position(return_pos)
+		updatePos(return_pos.x, return_pos.y)
 
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	move_and_slide(velocity, Vector2(0, -1))
-
-
-func _on_Door_body_entered(body):
-	get_tree().change_scene("res://Level2.tscn")
+	#if(CameraRoot is.... ready):
+	#get_node("/root/World/CameraRoot").updatePos(self.get_position().y)
 	
-func _on_Door2_body_entered(body):
-	get_tree().change_scene("res://Level3.tscn")
 
-func _on_Door3_body_entered(body):
-	get_tree().change_scene("res://Level4.tscn")
+func updatePos(valueX, valueY):
+	if(valueY is bool):
+		self.set_position(Vector2(valueX, self.get_position().y))
+	else:
+		self.set_position(Vector2(valueX, valueY))
+	#get_node("/root/World/CameraRoot").updatePos(valueY)
+
+
+

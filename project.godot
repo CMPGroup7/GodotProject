@@ -8,14 +8,32 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Camera2D",
+"class": "CameraRoot",
+"language": "GDScript",
+"path": "res://CameraRoot.gd"
+}, {
+"base": "Area2D",
+"class": "Door",
+"language": "GDScript",
+"path": "res://DoorScript.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerNode",
+"language": "GDScript",
+"path": "res://PlayerNode.gd"
+} ]
 _global_script_class_icons={
+"CameraRoot": "",
+"Door": "",
+"PlayerNode": ""
 }
 
 [application]
 
 config/name="Gifted"
-run/main_scene="res://Level1.tscn"
+run/main_scene="res://Level_OutsideXZ.tscn"
 config/icon="res://icon.png"
 
 [physics]

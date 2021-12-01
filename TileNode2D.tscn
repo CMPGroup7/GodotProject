@@ -20,6 +20,21 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedOutsideSprite/StaticBody2D"]
 shape = SubResource( 1 )
 
+[node name="Small_RedOutsideSprite" type="Sprite" parent="."]
+position = Vector2( -16, 48 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_RedOutsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Small_RedOutsideSprite/StaticBody2D"]
+shape = SubResource( 1 )
+
 [node name="RedInsideSprite" type="Sprite" parent="."]
 position = Vector2( 64, 0 )
 texture = ExtResource( 1 )
@@ -33,6 +48,22 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="RedInsideSprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedInsideSprite/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Small_RedInsideSprite" type="Sprite" parent="."]
+position = Vector2( 16, 48 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+frame = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_RedInsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Small_RedInsideSprite/StaticBody2D"]
 shape = SubResource( 1 )
 
 [node name="BlueOutsideSprite" type="Sprite" parent="."]
@@ -50,6 +81,22 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueOutsideSprite/StaticBody2D"]
 shape = SubResource( 1 )
 
+[node name="Small_BlueOutsideSprite" type="Sprite" parent="."]
+position = Vector2( 48, 48 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+frame = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_BlueOutsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Small_BlueOutsideSprite/StaticBody2D"]
+shape = SubResource( 1 )
+
 [node name="BlueInsideSprite" type="Sprite" parent="."]
 position = Vector2( 192, 0 )
 texture = ExtResource( 1 )
@@ -63,4 +110,20 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="BlueInsideSprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlueInsideSprite/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Small_BlueInsideSprite" type="Sprite" parent="."]
+position = Vector2( 80, 48 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+frame = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Small_BlueInsideSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Small_BlueInsideSprite/StaticBody2D"]
 shape = SubResource( 1 )
