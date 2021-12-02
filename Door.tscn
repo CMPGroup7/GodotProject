@@ -5,6 +5,7 @@
 
 [node name="Door" type="Area2D"]
 scale = Vector2( 0.720281, 0.720281 )
+collision_layer = 16
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

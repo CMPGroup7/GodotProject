@@ -124,6 +124,7 @@ tracks/0/keys = {
 }
 
 [node name="PlayerNode" type="KinematicBody2D"]
+collision_mask = 14
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]

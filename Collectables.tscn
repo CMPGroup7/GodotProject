@@ -37,6 +37,7 @@ tracks/0/keys = {
 }
 
 [node name="Jjokji" type="Area2D"]
+collision_layer = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
