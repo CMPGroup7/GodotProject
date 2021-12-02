@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
-[ext_resource path="res://EnemyNode.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Collectables.tscn" type="PackedScene" id=5]
 [ext_resource path="res://CameraRootNode.tscn" type="PackedScene" id=6]
@@ -38,9 +37,6 @@ scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131097, 3, 0, 131098, 3, 0, 131099, 3, 0, 131107, 3, 0, 131108, 3, 0, 131109, 3, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196628, 3, 0, 196629, 3, 0, 196630, 3, 0, 196639, 3, 0, 196640, 3, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262153, 1, 0, 262154, 1, 0, 262162, 3, 0, 262163, 3, 0, 262174, 3, 0, 262175, 3, 0, 262176, 3, 0, 393215, 1, 0, 327680, 1, 0, 327683, 1, 0, 327691, 1, 0, 327709, 3, 0, 327710, 3, 0, 327711, 3, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 3, 0, 327716, 3, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393237, 3, 0, 393238, 3, 0, 393239, 3, 0, 393244, 3, 0, 393245, 3, 0, 393246, 3, 0, 393247, 3, 0, 393248, 3, 0, 393249, 3, 0, 393250, 3, 0, 458767, 1, 0, 458772, 3, 0, 458773, 3, 0, 458774, 3, 0, 458775, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 458780, 3, 0, 458781, 3, 0, 458782, 3, 0, 458783, 3, 0, 458784, 3, 0, 458785, 3, 0, 458786, 3, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 3, 0, 524307, 3, 0 )
-
-[node name="EnemyNode" parent="." instance=ExtResource( 3 )]
-position = Vector2( 308, 1 )
 
 [node name="PlayerNode" parent="." instance=ExtResource( 4 )]
 scale = Vector2( 1.5, 1.5 )
