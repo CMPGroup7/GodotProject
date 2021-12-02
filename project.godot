@@ -15,6 +15,11 @@ _global_script_classes=[ {
 "path": "res://CameraRoot.gd"
 }, {
 "base": "Area2D",
+"class": "Collectables",
+"language": "GDScript",
+"path": "res://Collectables.gd"
+}, {
+"base": "Area2D",
 "class": "Door",
 "language": "GDScript",
 "path": "res://DoorScript.gd"
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "CameraRoot": "",
+"Collectables": "",
 "Door": "",
 "PlayerNode": ""
 }
@@ -33,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gifted"
-run/main_scene="res://Level_OutsideXZ.tscn"
+run/main_scene="res://Level_InsideXZ.tscn"
 config/icon="res://icon.png"
 
 [physics]

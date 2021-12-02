@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://CameraRoot.gd" type="Script" id=1]
+[ext_resource path="res://Alphabet/N.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Alphabet/E2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Alphabet/E.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Alphabet/T.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Alphabet/S.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Alphabet/R.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Alphabet/P.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Life.tscn" type="PackedScene" id=9]
 
 [node name="CameraRoot" type="Camera2D"]
 zoom = Vector2( 0.6, 0.6 )
@@ -19,3 +27,40 @@ zoom = Vector2( 0.6, 0.6 )
 [node name="Cam_Z" type="Camera2D" parent="."]
 position = Vector2( 883, 0 )
 zoom = Vector2( 0.6, 0.6 )
+
+[node name="E2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 310.75, -142 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="E" parent="." instance=ExtResource( 4 )]
+position = Vector2( 213.75, -147 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="N" parent="." instance=ExtResource( 2 )]
+position = Vector2( 369.75, -144 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="R" parent="." instance=ExtResource( 7 )]
+position = Vector2( 164.75, -143 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="S" parent="." instance=ExtResource( 6 )]
+position = Vector2( 265.75, -144 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="T" parent="." instance=ExtResource( 5 )]
+position = Vector2( 417, -141 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="P" parent="." instance=ExtResource( 8 )]
+position = Vector2( 113.75, -142 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Life" parent="." instance=ExtResource( 9 )]
+position = Vector2( 551, -154 )
+
+[node name="Life2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 522, -154 )
+
+[node name="Life3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 495, -154 )

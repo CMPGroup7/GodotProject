@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://EnemyNode.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Collictibles.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Collectables.tscn" type="PackedScene" id=5]
 [ext_resource path="res://CameraRootNode.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Collectables.gd" type="Script" id=7]
 
 [node name="World" type="Node2D"]
 
@@ -48,11 +49,43 @@ scale = Vector2( 1.5, 1.5 )
 scale = Vector2( 0.666667, 0.666667 )
 drag_margin_v_enabled = false
 
-[node name="Area2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 483, 176 )
+[node name="Jjokji" parent="." instance=ExtResource( 5 )]
+position = Vector2( 430, 168 )
+script = ExtResource( 7 )
+
+[node name="Jjokji2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 317, 99 )
+script = ExtResource( 7 )
+
+[node name="Jjokji3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 108, 132 )
+script = ExtResource( 7 )
+
+[node name="Jjokji4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 46, 39 )
+script = ExtResource( 7 )
+
+[node name="Jjokji5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 189, 105 )
+script = ExtResource( 7 )
+
+[node name="Jjokji6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 538, 227 )
+script = ExtResource( 7 )
+
+[node name="Jjokji7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 480, 63 )
+script = ExtResource( 7 )
 
 [connection signal="body_entered" from="Door_toOutsideX" to="Door_toOutsideX" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_toOutsideZ" to="Door_toOutsideZ" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_lf_inToZ" to="Door_rt_inToX" method="_on_fromLeftDoor_body_entered"]
 [connection signal="body_entered" from="Door_rt_inToX" to="Door_lf_inToZ" method="_on_fromRightDoor_body_entered"]
 [connection signal="body_entered" from="Door_mid_in" to="PlayerNode/CameraRoot" method="_on_SameLevelDoor_body_entered"]
+[connection signal="body_entered" from="Jjokji" to="Jjokji" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji2" to="Jjokji2" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji3" to="Jjokji3" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji4" to="Jjokji4" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji5" to="Jjokji5" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji6" to="Jjokji6" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji7" to="Jjokji7" method="_on_Jjokji_body_entered"]
