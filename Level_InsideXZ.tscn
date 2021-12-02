@@ -42,6 +42,7 @@ tile_data = PoolIntArray( 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0
 scale = Vector2( 1.5, 1.5 )
 
 [node name="CameraRoot" parent="PlayerNode" instance=ExtResource( 6 )]
+position = Vector2( -180, 0 )
 scale = Vector2( 0.666667, 0.666667 )
 drag_margin_v_enabled = false
 
