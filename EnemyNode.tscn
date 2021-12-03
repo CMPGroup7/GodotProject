@@ -9,5 +9,8 @@ script = ExtResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 30, 30, -29, 30, -31, -29, 30, -30 )
+[node name="Damage_polyCol" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 30, 30, -29, 30, -29.5873, -21.5393, -26.0196, -29.2691, -19.479, -29.2691, -14.1275, -20.9447, 13.2243, -20.3501, 15.0081, -31.6476, 29.2786, -29.2691, 31.657, -19.7555 )
+
+[node name="Shell_polyCol" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -17.6952, -31.6476, 13.8189, -31.6476, 12.6297, -22.1339, -13.5329, -22.1339 )
