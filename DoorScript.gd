@@ -8,7 +8,10 @@ signal my_signal(value1, value2)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	emit_signal("my_signal", get_instance_id (), true)
+	pass
+
+func _to_other_scene():
+	emit_signal("door_output_signal", get_instance_id (), true)
 
 func _on_Door_body_entered(body):
 	if(body is PlayerNode and ResourceLoader.exists(path_to_scene)):

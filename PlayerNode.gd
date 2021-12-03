@@ -66,7 +66,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	move_and_slide(velocity, Vector2(0, -1))
 	#if(CameraRoot is.... ready):
-	#get_node("/root/World/CameraRoot").updatePos(self.get_position().y)
+	get_node("/root/World/CameraRoot").updatePos(self.get_position().y)
 
 func updatePos(valueX, valueY):
 	if(valueY is bool):

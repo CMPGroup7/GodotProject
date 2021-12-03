@@ -1,34 +1,35 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://LevelScript.gd" type="Script" id=3]
 [ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Collectables.tscn" type="PackedScene" id=5]
 [ext_resource path="res://CameraRootNode.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Collectables.gd" type="Script" id=7]
 
 [node name="World" type="Node2D"]
+script = ExtResource( 3 )
 
-[node name="Door_toOutsideX" parent="." instance=ExtResource( 2 )]
-position = Vector2( 6, 136 )
+[node name="Door_outX" parent="." instance=ExtResource( 2 )]
+position = Vector2( 257.07, 200.183 )
 path_to_scene = "res://Level_OutsideXZ.tscn"
 
-[node name="Door_toOutsideZ" parent="." instance=ExtResource( 2 )]
+[node name="Door_outZ" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1084, 138 )
 path_to_scene = "res://Level_OutsideXZ.tscn"
 
 [node name="Door_lf_inToZ" parent="." instance=ExtResource( 2 )]
-position = Vector2( -43, 148 )
+position = Vector2( -1.4689, 148 )
 scale = Vector2( 0.2, 5 )
 path_to_scene = "res://Level_InsideZ.tscn"
 
 [node name="Door_rt_inToX" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1191, 148 )
+position = Vector2( 1232.53, 148 )
 scale = Vector2( 0.2, 5 )
-path_to_scene = "res://Level_InsideZ.tscn"
 
 [node name="Door_mid_in" parent="." instance=ExtResource( 2 )]
-position = Vector2( 574, 156 )
+position = Vector2( 615.531, 156 )
 scale = Vector2( 0.2, 5 )
 path_to_scene = "res://Level_InsideZ.tscn"
 
@@ -37,15 +38,11 @@ scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 1 )
 collision_layer = 8
 format = 1
-tile_data = PoolIntArray( 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131097, 3, 0, 131098, 3, 0, 131099, 3, 0, 131107, 3, 0, 131108, 3, 0, 131109, 3, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196628, 3, 0, 196629, 3, 0, 196630, 3, 0, 196639, 3, 0, 196640, 3, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262153, 1, 0, 262154, 1, 0, 262162, 3, 0, 262163, 3, 0, 262174, 3, 0, 262175, 3, 0, 262176, 3, 0, 393215, 1, 0, 327680, 1, 0, 327683, 1, 0, 327691, 1, 0, 327709, 3, 0, 327710, 3, 0, 327711, 3, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 3, 0, 327716, 3, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393237, 3, 0, 393238, 3, 0, 393239, 3, 0, 393244, 3, 0, 393245, 3, 0, 393246, 3, 0, 393247, 3, 0, 393248, 3, 0, 393249, 3, 0, 393250, 3, 0, 458767, 1, 0, 458772, 3, 0, 458773, 3, 0, 458774, 3, 0, 458775, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 458780, 3, 0, 458781, 3, 0, 458782, 3, 0, 458783, 3, 0, 458784, 3, 0, 458785, 3, 0, 458786, 3, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 3, 0, 524307, 3, 0 )
+tile_data = PoolIntArray( 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131097, 3, 0, 131098, 3, 0, 131099, 3, 0, 131107, 3, 0, 131108, 3, 0, 131109, 3, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196628, 3, 0, 196629, 3, 0, 196630, 3, 0, 196639, 3, 0, 196640, 3, 0, 262148, 1, 0, 262149, 1, 0, 262150, 1, 0, 262153, 1, 0, 262154, 1, 0, 262162, 3, 0, 262163, 3, 0, 262174, 3, 0, 262175, 3, 0, 262176, 3, 0, 393215, 1, 0, 327680, 1, 0, 327683, 1, 0, 327691, 1, 0, 327709, 3, 0, 327710, 3, 0, 327711, 3, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 3, 0, 327716, 3, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0, 393237, 3, 0, 393238, 3, 0, 393239, 3, 0, 393244, 3, 0, 393245, 3, 0, 393246, 3, 0, 393247, 3, 0, 393248, 3, 0, 393249, 3, 0, 393250, 3, 0, 458759, 1, 0, 458760, 1, 0, 458767, 1, 0, 458772, 3, 0, 458773, 3, 0, 458774, 3, 0, 458775, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 458780, 3, 0, 458781, 3, 0, 458782, 3, 0, 458783, 3, 0, 458784, 3, 0, 458785, 3, 0, 458786, 3, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 3, 0, 524307, 3, 0 )
 
 [node name="PlayerNode" parent="." instance=ExtResource( 4 )]
+position = Vector2( 44.8985, -19.0818 )
 scale = Vector2( 1.5, 1.5 )
-
-[node name="CameraRoot" parent="PlayerNode" instance=ExtResource( 6 )]
-position = Vector2( -180, 0 )
-scale = Vector2( 0.666667, 0.666667 )
-drag_margin_v_enabled = false
 
 [node name="Jjokji" parent="." instance=ExtResource( 5 )]
 position = Vector2( 430, 168 )
@@ -60,7 +57,7 @@ position = Vector2( 108, 132 )
 script = ExtResource( 7 )
 
 [node name="Jjokji4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 46, 39 )
+position = Vector2( 428.76, 62.5717 )
 script = ExtResource( 7 )
 
 [node name="Jjokji5" parent="." instance=ExtResource( 5 )]
@@ -75,11 +72,17 @@ script = ExtResource( 7 )
 position = Vector2( 480, 63 )
 script = ExtResource( 7 )
 
-[connection signal="body_entered" from="Door_toOutsideX" to="Door_toOutsideX" method="_on_Door_body_entered"]
-[connection signal="body_entered" from="Door_toOutsideZ" to="Door_toOutsideZ" method="_on_Door_body_entered"]
+[node name="CameraRoot" parent="." instance=ExtResource( 6 )]
+position = Vector2( -0.376892, 0 )
+scale = Vector2( 1, 1 )
+drag_margin_v_enabled = false
+[connection signal="body_entered" from="Door_outX" to="Door_outX" method="_on_Door_body_entered"]
+[connection signal="body_entered" from="Door_outZ" to="Door_outZ" method="_on_Door_body_entered"]
+[connection signal="body_entered" from="Door_lf_inToZ" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
 [connection signal="body_entered" from="Door_lf_inToZ" to="Door_rt_inToX" method="_on_fromLeftDoor_body_entered"]
+[connection signal="body_entered" from="Door_rt_inToX" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
 [connection signal="body_entered" from="Door_rt_inToX" to="Door_lf_inToZ" method="_on_fromRightDoor_body_entered"]
-[connection signal="body_entered" from="Door_mid_in" to="PlayerNode/CameraRoot" method="_on_SameLevelDoor_body_entered"]
+[connection signal="body_entered" from="Door_mid_in" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
 [connection signal="body_entered" from="Jjokji" to="Jjokji" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji2" to="Jjokji2" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji3" to="Jjokji3" method="_on_Jjokji_body_entered"]

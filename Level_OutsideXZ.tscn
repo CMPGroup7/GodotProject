@@ -5,7 +5,7 @@
 [ext_resource path="res://Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://EnemyNode.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Collictibles.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Collectables.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 
@@ -18,17 +18,17 @@ position = Vector2( 768, 167 )
 path_to_scene = "res://Level_InsideXZ.tscn"
 
 [node name="Door_mid_out" parent="." instance=ExtResource( 3 )]
-position = Vector2( 573, 177 )
+position = Vector2( 617, 177 )
 scale = Vector2( 0.3, 5 )
 path_to_scene = "res://Level_OutsideZ.tscn"
 
 [node name="Door_lf_outToZ" parent="." instance=ExtResource( 3 )]
-position = Vector2( -43, 162 )
+position = Vector2( 1, 162 )
 scale = Vector2( 0.3, 5 )
 path_to_scene = "res://Level_OutsideZ.tscn"
 
 [node name="Door_rt_outToX" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1191, 162 )
+position = Vector2( 1235, 162 )
 scale = Vector2( 0.3, 5 )
 path_to_scene = "res://Level_OutsideZ.tscn"
 
@@ -36,20 +36,19 @@ path_to_scene = "res://Level_OutsideZ.tscn"
 scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 196606, 0, 0, 196607, 0, 0, 131072, 4, 0, 131073, 4, 0, 131107, 6, 0, 131108, 6, 0, 131109, 6, 0, 196610, 4, 0, 196614, 4, 0, 196617, 4, 0, 196618, 4, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 2, 0, 196627, 2, 0, 196631, 6, 0, 196632, 6, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262156, 0, 0, 327680, 0, 0, 327715, 2, 0, 327716, 2, 0, 327717, 2, 0, 393216, 0, 0, 393230, 0, 0, 393231, 0, 0, 393233, 0, 0, 393234, 2, 0, 393235, 2, 0, 393239, 2, 0, 393240, 2, 0, 393243, 2, 0, 393244, 2, 0, 393249, 2, 0, 393250, 2, 0, 393251, 2, 0, 393252, 2, 0, 393253, 2, 0, 458752, 0, 0, 458766, 0, 0, 458767, 0, 0, 458772, 2, 0, 458773, 2, 0, 458783, 2, 0, 458784, 2, 0, 458785, 2, 0, 458786, 2, 0, 458787, 2, 0, 458788, 2, 0, 458789, 2, 0, 524288, 0, 0, 524289, 0, 0, 524290, 4, 0, 524293, 4, 0, 524294, 4, 0, 524295, 4, 0, 524297, 4, 0, 524298, 4, 0, 524300, 4, 0, 524301, 4, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589833, 0, 0, 589834, 0, 0, 589836, 0, 0, 589837, 0, 0 )
+tile_data = PoolIntArray( 196607, 0, 0, 131072, 4, 0, 131073, 4, 0, 131107, 6, 0, 131108, 6, 0, 131109, 6, 0, 131110, 2, 0, 196610, 4, 0, 196614, 4, 0, 196617, 4, 0, 196618, 4, 0, 196619, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 2, 0, 196628, 2, 0, 196631, 6, 0, 196632, 6, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262156, 0, 0, 393215, 0, 0, 327680, 0, 0, 327715, 2, 0, 327716, 2, 0, 327717, 2, 0, 327718, 2, 0, 458751, 0, 0, 393216, 0, 0, 393230, 0, 0, 393231, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 2, 0, 393236, 2, 0, 393239, 2, 0, 393240, 2, 0, 393243, 2, 0, 393244, 2, 0, 393249, 2, 0, 393250, 2, 0, 393251, 2, 0, 393252, 2, 0, 393253, 2, 0, 393254, 2, 0, 524287, 0, 0, 458752, 0, 0, 458766, 0, 0, 458767, 0, 0, 458772, 2, 0, 458773, 2, 0, 458783, 2, 0, 458784, 2, 0, 458785, 2, 0, 458786, 2, 0, 458787, 2, 0, 458788, 2, 0, 458789, 2, 0, 458790, 2, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 4, 0, 524293, 4, 0, 524294, 4, 0, 524297, 4, 0, 524298, 4, 0, 524300, 4, 0, 524301, 4, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589829, 0, 0, 589830, 0, 0, 589833, 0, 0, 589834, 0, 0, 589836, 0, 0, 589837, 0, 0 )
 
 [node name="EnemyNode" parent="." instance=ExtResource( 4 )]
 position = Vector2( 308, 1 )
 
 [node name="PlayerNode" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1.90735e-06, 0 )
+position = Vector2( 38.6812, 0 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Area2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 483, 176 )
 
 [node name="CameraRoot" parent="." instance=ExtResource( 1 )]
-
 [connection signal="body_entered" from="Door_inX" to="Door_inX" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_inZ" to="Door_inZ" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_mid_out" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
