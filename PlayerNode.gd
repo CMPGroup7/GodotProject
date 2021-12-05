@@ -60,8 +60,15 @@ func _physics_process(delta):
 			
 	# go to return point when player goes out of the screen       
 	if self.get_position().y > get_viewport_rect().size.y:
+		life -= 1
 		updatePos(return_pos.x, return_pos.y)
-
+		match[life]:
+			[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+			[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
+			[0]:
+				get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
+				get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
+				get_tree().paused = true
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	move_and_slide(velocity, Vector2(0, -1))

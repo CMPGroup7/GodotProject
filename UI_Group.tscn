@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Alphabet/E.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Alphabet/S.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameOver.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Alphabet/E2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Alphabet/R.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Alphabet/N.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Life.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Alphabet/T.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Alphabet/P.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Alphabet.gd" type="Script" id=10]
+[ext_resource path="res://GameOver.gd" type="Script" id=11]
+
+[node name="UI_Group" type="Node2D"]
+
+[node name="GameOver" parent="." instance=ExtResource( 3 )]
+margin_left = 224.0
+margin_top = -92.0
+margin_right = 303.0
+margin_bottom = -61.0
+rect_scale = Vector2( 2.13194, 2.13194 )
+script = ExtResource( 11 )
+
+[node name="TextGroup" type="Node2D" parent="."]
+
+[node name="E2" parent="TextGroup" instance=ExtResource( 4 )]
+position = Vector2( 310.75, -142 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 10 )
+
+[node name="E" parent="TextGroup" instance=ExtResource( 1 )]
+position = Vector2( 213.75, -147 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 10 )
+
+[node name="N" parent="TextGroup" instance=ExtResource( 6 )]
+position = Vector2( 369.75, -144 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 10 )
+
+[node name="R" parent="TextGroup" instance=ExtResource( 5 )]
+position = Vector2( 164.75, -143 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 10 )
+
+[node name="S" parent="TextGroup" instance=ExtResource( 2 )]
+position = Vector2( 265.75, -144 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 10 )
+
+[node name="T" parent="TextGroup" instance=ExtResource( 8 )]
+position = Vector2( 417, -141 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 10 )
+
+[node name="P" parent="TextGroup" instance=ExtResource( 9 )]
+position = Vector2( 113.75, -142 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 10 )
+
+[node name="LifeGroup" type="Node2D" parent="."]
+
+[node name="Life" parent="LifeGroup" instance=ExtResource( 7 )]
+position = Vector2( 551, -154 )
+
+[node name="Life2" parent="LifeGroup" instance=ExtResource( 7 )]
+position = Vector2( 522, -154 )
+
+[node name="Life3" parent="LifeGroup" instance=ExtResource( 7 )]
+position = Vector2( 495, -154 )

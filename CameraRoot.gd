@@ -12,8 +12,10 @@ func _on_SameLevelDoor_body_entered(body):
 	if(body is PlayerNode):
 		if($Cam_X.current == true):
 			$Cam_Z.current = true
+			$UI_Group.set_position(Vector2(618, 0))
 		else:
 			$Cam_X.current = true
+			$UI_Group.set_position(Vector2(0, 0))
 
 func updatePos(valueY):
 	if(valueY >= self.drag_margin_bottom):

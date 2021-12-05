@@ -5,7 +5,7 @@
 [ext_resource path="res://Door.tscn" type="PackedScene" id=3]
 [ext_resource path="res://EnemyNode.tscn" type="PackedScene" id=4]
 [ext_resource path="res://PlayerNode.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Collectables.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI_Group.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node2D"]
 
@@ -45,10 +45,10 @@ position = Vector2( 308, 1 )
 position = Vector2( 38.6812, 0 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Area2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 483, 176 )
-
 [node name="CameraRoot" parent="." instance=ExtResource( 1 )]
+
+[node name="UI_Group" parent="CameraRoot" instance=ExtResource( 7 )]
+
 [connection signal="body_entered" from="Door_inX" to="Door_inX" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_inZ" to="Door_inZ" method="_on_Door_body_entered"]
 [connection signal="body_entered" from="Door_mid_out" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
@@ -58,4 +58,3 @@ position = Vector2( 483, 176 )
 [connection signal="body_entered" from="Door_rt_outToX" to="Door_lf_outToZ" method="_on_fromRightDoor_body_entered"]
 [connection signal="body_entered" from="Door_rt_outToX" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
 [connection signal="my_signal" from="Door_rt_outToX" to="Door_lf_outToZ" method="_on_Door_my_signal"]
-[connection signal="tree_entered" from="PlayerNode" to="PlayerNode" method="_on_PlayerNode_tree_entered"]
