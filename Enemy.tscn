@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/Enemy_Image/enemy.png" type="Texture" id=1]
+[ext_resource path="res://Enemy.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "enemy_idle"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "enemy_walk"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0, 2 ]
+}
+
+[node name="Enemy" type="KinematicBody2D"]
+scale = Vector2( 0.7, 0.7 )
+collision_layer = 4
+collision_mask = 9
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+hframes = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, 1.42857 )
+scale = Vector2( 0.95, 0.95 )
+polygon = PoolVector2Array( -8, 19, 1, 19, 2, 13, 10, 13, 9, 19, 17, 19, 19, 17, 20, 13, 25, 9, 25, 5, 20, 7, 19, -5, 14, -7, 10, -12, -1, -12, -5, -6, -16, -8, -21, -5, -23, -1, -22, 3, -17, 4, -13, 4, -11, 8, -8, 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/enemy_idle = SubResource( 2 )
+anims/enemy_walk = SubResource( 3 )
