@@ -9,7 +9,7 @@ collision_layer = 16
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -36, -45, 30, -45, 35, 32, -35, 32 )
+polygon = PoolVector2Array( -17.8417, -45, 15.5364, -45, 16.5181, 32, -16.86, 32 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.140845, 0.140845 )
