@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="TutorialLabel" type="RichTextLabel" parent="."]
+margin_left = 457.0
+margin_top = 258.0
+margin_right = 630.0
+margin_bottom = 423.0
+text = "Tutorial~ blabla"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 41.0
+margin_top = 522.0
+margin_right = 214.0
+margin_bottom = 572.0
+text = "Back"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_BackButton_pressed"]
