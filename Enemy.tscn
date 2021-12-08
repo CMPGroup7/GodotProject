@@ -80,7 +80,8 @@ enabled = true
 collision_mask = 8
 
 [node name="DetectPlayerTop" type="RayCast2D" parent="."]
-position = Vector2( 4.28572, 7.14286 )
-rotation = 3.14159
-scale = Vector2( 20, 0.4 )
-enabled = true
+visible = false
+position = Vector2( -1.42857, 7.14286 )
+rotation = -3.14159
+scale = Vector2( 20, 1 )
+cast_to = Vector2( 0, 20 )

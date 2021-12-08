@@ -29,7 +29,7 @@ func _on_camX_area_entered(body):
 			$UI_Group.set_position(Vector2(0, 0))
 
 func _on_camZ_area_entered(body):
-	if(body is PlayerNode):
+	if body is PlayerNode:
 		if($Cam_X.current == true):
 			$Cam_Z.current = true
 			$UI_Group.set_position(Vector2(618, 0))

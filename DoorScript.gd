@@ -26,9 +26,13 @@ func _on_Door_my_signal(value1, value2):
 func _on_fromRightDoor_body_entered(body):
 	if(body is PlayerNode):
 		get_node("/root/World/PlayerNode").updatePos(self.get_position().x +32, false)
+		#$PlayerNode.restart_pos = Vector2(self.get_position().x +32)
+		get_node("/root/World/PlayerNode").restart_pos = Vector2(self.get_position().x +32, get_node("/root/World/PlayerNode").get_position().y)
 		print("fromRight")
 
 func _on_fromLeftDoor_body_entered(body):
 	if(body is PlayerNode):
 		get_node("/root/World/PlayerNode").updatePos(self.get_position().x -32, false)
+		get_node("/root/World/PlayerNode").restart_pos = Vector2(self.get_position().x -32, get_node("/root/World/PlayerNode").get_position().y)
+		#$PlayerNode.restart_pos = Vector2(self.get_position().x -32)
 		print("fromLeft")
