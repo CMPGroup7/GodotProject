@@ -6,6 +6,8 @@ const gravity = 200.0
 const WALK_SPEED = 100
 const JUMP_FORCE = 125
 
+var jump_count = 0
+
 var velocity = Vector2()
 var return_pos = Vector2()
 
@@ -19,8 +21,17 @@ func _physics_process(delta):
 	
 	velocity.y += delta * gravity
 	
-	if Input.is_action_pressed("ui_select") or Input.is_action_pressed("ui_up") and is_on_floor():
-		velocity.y = -JUMP_FORCE
+	if Input.is_action_just_pressed("ui_select"):
+		# can only jump twice in a row
+		if is_on_floor() and jump_count == 0:
+			velocity.y = -JUMP_FORCE
+			jump_count += 1
+		elif not is_on_floor() and jump_count == 1:
+			velocity.y = -JUMP_FORCE
+			jump_count += 1
+		else:
+			jump_count = 0
+		
 
 
 	if Input.is_action_pressed("ui_left"):

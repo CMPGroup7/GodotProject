@@ -6,7 +6,8 @@ var WALK_SPEED = 20
 var change_direction = false
 
 onready var animationPlayer = $AnimationPlayer
-onready var rayCast = get_node("RayCast2D")
+onready var tile_rayCast = get_node("DetectTile")
+onready var playerTop_rayCast = get_node("DetectPlayerTop")
 
 func _physics_process(delta):
 	
@@ -17,20 +18,32 @@ func _physics_process(delta):
 	
 	move_and_slide(enemy_velocity)
 	
-	try_interact()
-		
-func try_interact():
+	try_interact_tile()
+	
+	try_interact_player()
 
-	var collider = rayCast.get_collider()
 
-	if rayCast.is_colliding():
-		if collider is TileMap:
-			print("coll!")
+func try_interact_tile():
+
+	var collider = tile_rayCast.get_collider()
+	
+	if tile_rayCast.is_colliding():
+		print(collider.name)
 		if change_direction == true:
 			change_direction = false
-	else :
 
+	else :
 		if change_direction == false:
 			change_direction = true
 			self.scale.x *= -1
 			WALK_SPEED = -WALK_SPEED
+
+func try_interact_player():
+	
+	var collider = playerTop_rayCast.get_collider()
+	
+	if playerTop_rayCast.is_colliding() and collider.name == "PlayerNode":
+		print(collider.name)
+
+	else :
+		pass

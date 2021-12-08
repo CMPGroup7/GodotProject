@@ -73,8 +73,14 @@ anims/RESET = SubResource( 1 )
 anims/enemy_idle = SubResource( 2 )
 anims/enemy_walk = SubResource( 3 )
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="DetectTile" type="RayCast2D" parent="."]
 position = Vector2( -15.7143, 5.71428 )
 scale = Vector2( 0.1, 1 )
 enabled = true
 collision_mask = 8
+
+[node name="DetectPlayerTop" type="RayCast2D" parent="."]
+position = Vector2( 4.28572, 7.14286 )
+rotation = 3.14159
+scale = Vector2( 20, 0.4 )
+enabled = true
