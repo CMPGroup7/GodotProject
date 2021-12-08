@@ -18,11 +18,9 @@ onready var player_vars = get_node("/root/GlobalVariables")
 func _physics_process(delta):
 	
 	velocity.y += delta * gravity
-	
 	if Input.is_action_pressed("ui_select") or Input.is_action_pressed("ui_up") and is_on_floor():
 		velocity.y = -JUMP_FORCE
-
-
+		
 	if Input.is_action_pressed("ui_left"):
 		if is_on_floor():
 			animationPlayer.play("WalkLeft")
@@ -47,7 +45,7 @@ func _physics_process(delta):
 		else:
 			animationPlayer.play("Jump")
 			velocity.x = 0
-
+	
 
 	#check return point when player goes out of the screen
 	if is_on_floor():
@@ -61,8 +59,9 @@ func _physics_process(delta):
 			
 	# go to return point when player goes out of the screen       
 	if self.get_position().y > get_viewport_rect().size.y:
-		life -= 1
 		updatePos(return_pos.x, return_pos.y)
+		life -= 1
+		print("fall")
 		match[life]:
 			[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
 			[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()

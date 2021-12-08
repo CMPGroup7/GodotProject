@@ -11,6 +11,11 @@ func _ready():
 func updatePos(valueY):
 	if(valueY >= self.drag_margin_bottom):
 		self.set_position(Vector2(0, valueY))
+		if($Cam_X.current == true):
+			$UI_Group.set_position(Vector2(0, 0))
+		else:
+			$UI_Group.set_position(Vector2(618, 0))
+		
 	elif(valueY <= self.drag_margin_bottom):
 		self.set_position(Vector2(0, valueY))
 
