@@ -84,12 +84,9 @@ func _physics_process(delta):
 				get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
 				get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
 				get_tree().paused = true
-		
-	
-	
+
 	velocity = move_and_slide(velocity, Vector2.UP)
 	move_and_slide(velocity, Vector2(0, -1))
-
 
 	#check collision with enemy
 	for i in get_slide_count():
@@ -119,15 +116,6 @@ func _physics_process(delta):
 	#if(CameraRoot is.... ready):
 	get_node("/root/World/CameraRoot").updatePos(self.get_position().y)
 
-func wait(s):
-	var t = Timer.new()
-	t.set_wait_time(s)
-	t.set_one_shot(true)
-	self.get_tree().root.add_child(t)
-	t.start()
-	print("hi")
-	yield(t, "timeout")
-	t.queue_free()
 
 func updatePos(valueX, valueY):
 	if(valueY is bool):

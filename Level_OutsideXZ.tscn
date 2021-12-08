@@ -26,11 +26,13 @@ position = Vector2( 1149, 139 )
 path_to_scene = "res://Level_InsideXZ.tscn"
 
 [node name="Door_lf_outToZ" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 1, 162 )
 scale = Vector2( 0.3, 5 )
 path_to_scene = "res://Level_OutsideZ.tscn"
 
 [node name="Door_rt_outToX" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 1235, 162 )
 scale = Vector2( 0.3, 5 )
 path_to_scene = "res://Level_OutsideZ.tscn"
@@ -59,7 +61,7 @@ position = Vector2( 472, 175 )
 position = Vector2( 78, 269 )
 
 [node name="Enemy11" parent="." instance=ExtResource( 8 )]
-position = Vector2( 269, 231 )
+position = Vector2( 302, 206 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 894, 47 )
