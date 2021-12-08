@@ -77,10 +77,11 @@ position = Vector2( -0.376892, 0 )
 drag_margin_v_enabled = false
 
 [node name="UI_Group" parent="CameraRoot" instance=ExtResource( 8 )]
-[connection signal="body_entered" from="Door_lf_inToZ" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
+
 [connection signal="body_entered" from="Door_lf_inToZ" to="Door_rt_inToX" method="_on_fromLeftDoor_body_entered"]
-[connection signal="body_entered" from="Door_rt_inToX" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
+[connection signal="body_entered" from="Door_lf_inToZ" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
 [connection signal="body_entered" from="Door_rt_inToX" to="Door_lf_inToZ" method="_on_fromRightDoor_body_entered"]
+[connection signal="body_entered" from="Door_rt_inToX" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
 [connection signal="body_entered" from="Jjokji" to="Jjokji" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji2" to="Jjokji2" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji3" to="Jjokji3" method="_on_Jjokji_body_entered"]
