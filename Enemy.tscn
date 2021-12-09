@@ -53,7 +53,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=4]
-radius = 10.0
 height = 25.7132
 
 [node name="Enemy" type="KinematicBody2D"]
@@ -88,4 +87,5 @@ cast_to = Vector2( 0, 20 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.42857, 8.57143 )
 rotation = 1.56405
+scale = Vector2( 1, 1.00116 )
 shape = SubResource( 4 )

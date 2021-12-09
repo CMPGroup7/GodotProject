@@ -8,7 +8,7 @@
 [ext_resource path="res://LevelScript.gd" type="Script" id=6]
 [ext_resource path="res://UI_Group.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Collectables.gd" type="Script" id=9]
+[ext_resource path="res://Collectables7.gd" type="Script" id=9]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 6 )
@@ -49,7 +49,7 @@ tile_data = PoolIntArray( 20, 2, 0, 21, 2, 0, 22, 2, 0, 23, 2, 0, 65553, 0, 0, 6
 position = Vector2( 38.6812, 0 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Jjokji" parent="." instance=ExtResource( 4 )]
+[node name="Jjokji7" parent="." instance=ExtResource( 4 )]
 position = Vector2( 710, -29 )
 scale = Vector2( 0.7, 0.7 )
 script = ExtResource( 9 )
@@ -97,4 +97,6 @@ position = Vector2( 575, 11 )
 [connection signal="body_entered" from="Door_rt_outToX" to="Door_lf_outToZ" method="_on_fromRightDoor_body_entered"]
 [connection signal="body_entered" from="Door_rt_outToX" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
 [connection signal="my_signal" from="Door_rt_outToX" to="Door_lf_outToZ" method="_on_Door_my_signal"]
-[connection signal="body_entered" from="Jjokji" to="Jjokji" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji7" to="Jjokji7" method="_on_Jjokji_body_entered"]
+
+[editable path="Jjokji7"]

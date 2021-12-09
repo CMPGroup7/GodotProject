@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://Collectables.gd" type="Script" id=7]
 [ext_resource path="res://UI_Group.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Collectables6.gd" type="Script" id=10]
+[ext_resource path="res://Collectables5.gd" type="Script" id=11]
+[ext_resource path="res://Collectables4.gd" type="Script" id=12]
+[ext_resource path="res://Collectables3.gd" type="Script" id=13]
+[ext_resource path="res://Collectables2.gd" type="Script" id=14]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
@@ -39,13 +44,16 @@ scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 1 )
 collision_layer = 8
 format = 1
-tile_data = PoolIntArray( 65566, 3, 0, 65567, 3, 0, 196608, 1, 0, 196620, 1, 0, 196621, 1, 0, 196629, 3, 0, 196630, 3, 0, 196631, 3, 0, 196632, 3, 0, 196633, 3, 0, 196645, 3, 0, 196646, 3, 0, 327708, 3, 0, 327709, 3, 0, 327710, 3, 0, 327711, 3, 0, 327712, 3, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393231, 1, 0, 393232, 1, 0, 393251, 3, 0, 393252, 3, 0, 393253, 3, 0, 393254, 3, 0, 458774, 3, 0, 458775, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 589824, 1, 0, 589825, 1, 0, 589828, 1, 0, 589829, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589861, 3, 0, 589862, 3, 0, 720920, 3, 0, 720921, 3, 0, 720922, 3, 0, 720923, 3, 0, 720924, 3, 0, 786434, 1, 0, 786435, 1, 0, 786464, 3, 0, 786465, 3, 0, 786466, 3, 0, 786467, 3, 0 )
+tile_data = PoolIntArray( 65566, 3, 0, 65567, 3, 0, 196608, 1, 0, 196620, 1, 0, 196621, 1, 0, 196629, 3, 0, 196630, 3, 0, 196631, 3, 0, 196632, 3, 0, 196633, 3, 0, 196645, 3, 0, 196646, 3, 0, 327708, 3, 0, 327709, 3, 0, 327710, 3, 0, 327711, 3, 0, 327712, 3, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393231, 1, 0, 393232, 1, 0, 393251, 3, 0, 393252, 3, 0, 393253, 3, 0, 393254, 3, 0, 458774, 3, 0, 458775, 3, 0, 458776, 3, 0, 458777, 3, 0, 458778, 3, 0, 458779, 3, 0, 589824, 1, 0, 589825, 1, 0, 589828, 1, 0, 589829, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589861, 3, 0, 589862, 3, 0, 720920, 3, 0, 720921, 3, 0, 720922, 3, 0, 720923, 3, 0, 720924, 3, 0, 786434, 1, 0, 786435, 1, 0 )
 
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 549, 272 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 62, 170 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 976, 142 )
 
 [node name="PlayerNode" parent="." instance=ExtResource( 4 )]
 position = Vector2( 44.8985, 253.226 )
@@ -56,24 +64,24 @@ position = Vector2( 308, -13 )
 script = ExtResource( 7 )
 
 [node name="Jjokji2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 398, 92 )
-script = ExtResource( 7 )
+position = Vector2( 750, 75 )
+script = ExtResource( 14 )
 
 [node name="Jjokji3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 839, 324 )
-script = ExtResource( 7 )
+script = ExtResource( 13 )
 
 [node name="Jjokji4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1082, 362 )
-script = ExtResource( 7 )
+position = Vector2( 19, 78 )
+script = ExtResource( 12 )
 
 [node name="Jjokji5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 743, 198 )
-script = ExtResource( 7 )
+position = Vector2( 420, 70 )
+script = ExtResource( 11 )
 
-[node name="Jjokji7" parent="." instance=ExtResource( 5 )]
+[node name="Jjokji6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 998.414, 0.071106 )
-script = ExtResource( 7 )
+script = ExtResource( 10 )
 
 [node name="CameraRoot" parent="." instance=ExtResource( 6 )]
 position = Vector2( -0.376892, 0 )
@@ -90,4 +98,11 @@ drag_margin_v_enabled = false
 [connection signal="body_entered" from="Jjokji3" to="Jjokji3" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji4" to="Jjokji4" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji5" to="Jjokji5" method="_on_Jjokji_body_entered"]
-[connection signal="body_entered" from="Jjokji7" to="Jjokji7" method="_on_Jjokji_body_entered"]
+[connection signal="body_entered" from="Jjokji6" to="Jjokji6" method="_on_Jjokji_body_entered"]
+
+[editable path="Jjokji"]
+[editable path="Jjokji2"]
+[editable path="Jjokji3"]
+[editable path="Jjokji4"]
+[editable path="Jjokji5"]
+[editable path="Jjokji6"]

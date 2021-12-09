@@ -19,21 +19,38 @@ onready var restart_pos = self.get_position()
 onready var player_vars = get_node("/root/GlobalVariables")
 
 func _process(delta):
+	
+	if player_vars.jjokji1 == false:
+		get_node("/root/World/CameraRoot/UI_Group/TextGroup/P").visible = true
+	if player_vars.jjokji2 == false:
+		get_node("/root/World/CameraRoot/UI_Group/TextGroup/R").visible = true
+	if player_vars.jjokji3 == false:
+		get_node("/root/World/CameraRoot/UI_Group/TextGroup/E").visible = true
+	if player_vars.jjokji4 == false:
+		get_node("/root/World/CameraRoot/UI_Group/TextGroup/S").visible = true
+	if player_vars.jjokji5 == false:
+		get_node("/root/World/CameraRoot/UI_Group/TextGroup/E2").visible = true
+	if player_vars.jjokji6 == false:
+		get_node("/root/World/CameraRoot/UI_Group/TextGroup/N").visible = true
+	if player_vars.jjokji7 == false:
+		get_node("/root/World/CameraRoot/UI_Group/TextGroup/T").visible = true
+	
+	
 	match[player_vars.life]:
 			[2]:
-				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life"):
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life") != null:
 					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
 			[1]:
-				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life"):
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life")!= null:
 					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
-				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2"):
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2")!= null:
 					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
 			[0]:
-				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life"):
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life")!= null:
 					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
-				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2"):
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2")!= null:
 					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
-				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3"):
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3")!= null:
 					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
 					get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
 					get_tree().paused = true
@@ -110,6 +127,7 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision != null and 'Enemy' in collision.collider.name :
+			print("hello")
 			if if_collide_enemy == false :
 				print("Collided with: ", collision.collider.name)
 				player_vars.life -= 1
