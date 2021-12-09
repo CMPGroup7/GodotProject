@@ -16,9 +16,30 @@ var return_pos = Vector2()
 onready var animationPlayer = $AnimationPlayer
 onready var restart_pos = self.get_position()
 
-var life = 3;
+#var life = 3;
+
 
 onready var player_vars = get_node("/root/GlobalVariables")
+
+func _process(delta):
+	match[player_vars.life]:
+			[2]:
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life"):
+					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+			[1]:
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life"):
+					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2"):
+					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
+			[0]:
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life"):
+					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2"):
+					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
+				if get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3"):
+					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
+					get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
+					get_tree().paused = true
 
 func _physics_process(delta):
 	
@@ -75,9 +96,9 @@ func _physics_process(delta):
 	# go to return point when player goes out of the screen       
 	if self.get_position().y > get_viewport_rect().size.y:
 		updatePos(return_pos.x, return_pos.y)
-		life -= 1
+		player_vars.life -= 1
 		print("fall")
-		match[life]:
+		match[player_vars.life]:
 			[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
 			[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
 			[0]:
@@ -94,8 +115,8 @@ func _physics_process(delta):
 		if collision != null and 'Enemy' in collision.collider.name :
 			if if_collide_enemy == false :
 				print("Collided with: ", collision.collider.name)
-				life -= 1
-				match[life]:
+				player_vars.life -= 1
+				match[player_vars.life]:
 					[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
 					[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
 					[0]:
@@ -103,7 +124,7 @@ func _physics_process(delta):
 						get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
 						get_tree().paused = true
 
-				if life > 0 :
+				if player_vars.life > 0 :
 					if_collide_enemy = true
 					get_tree().paused = true
 					yield(get_tree().create_timer(1.0), "timeout")
