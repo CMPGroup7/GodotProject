@@ -50,7 +50,7 @@ scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 10 )
 
 [node name="T" parent="TextGroup" instance=ExtResource( 8 )]
-position = Vector2( 417, -141 )
+position = Vector2( 421, -144 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 10 )
 
