@@ -16,9 +16,6 @@ var return_pos = Vector2()
 onready var animationPlayer = $AnimationPlayer
 onready var restart_pos = self.get_position()
 
-#var life = 3;
-
-
 onready var player_vars = get_node("/root/GlobalVariables")
 
 func _process(delta):
