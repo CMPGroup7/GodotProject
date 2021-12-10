@@ -64,9 +64,11 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = -JUMP_FORCE
 			jump_count = 1
+			$MusicJump.play()
 		elif not is_on_floor() and jump_count == 1:
 			velocity.y = -JUMP_FORCE
 			jump_count += 1
+			$MusicJump.play()
 		else:
 			jump_count = 0
 
@@ -95,7 +97,6 @@ func _physics_process(delta):
 			animationPlayer.play("Jump")
 			velocity.x = 0
 
-
 	#check return point when player goes out of the screen
 	if is_on_floor():
 		if Input.is_action_pressed("ui_left"):
@@ -111,6 +112,7 @@ func _physics_process(delta):
 	if self.get_position().y > get_viewport_rect().size.y:
 		updatePos(return_pos.x, return_pos.y)
 		player_vars.life -= 1
+		get_node("/root/World/MusicFail").play()
 		print("fall")
 		match[player_vars.life]:
 			[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
@@ -131,6 +133,7 @@ func _physics_process(delta):
 			if if_collide_enemy == false :
 				print("Collided with: ", collision.collider.name)
 				player_vars.life -= 1
+				get_node("/root/World/MusicFail").play()
 				match[player_vars.life]:
 					[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
 					[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
@@ -138,6 +141,7 @@ func _physics_process(delta):
 						get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
 						get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
 						get_tree().paused = true
+				
 
 				if player_vars.life > 0 :
 					if_collide_enemy = true

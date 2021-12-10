@@ -16,3 +16,5 @@ var jjokji4 = true
 var jjokji5 = true
 var jjokji6 = true
 var jjokji7 = true
+
+var master_sound = AudioServer.get_bus_index("Master")

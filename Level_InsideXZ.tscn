@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
@@ -14,6 +14,10 @@
 [ext_resource path="res://Collectables4.gd" type="Script" id=12]
 [ext_resource path="res://Collectables3.gd" type="Script" id=13]
 [ext_resource path="res://Collectables2.gd" type="Script" id=14]
+[ext_resource path="res://MusicJump.wav" type="AudioStream" id=15]
+[ext_resource path="res://MusicDoor.wav" type="AudioStream" id=16]
+[ext_resource path="res://MusicCollect.wav" type="AudioStream" id=17]
+[ext_resource path="res://MusicFail.wav" type="AudioStream" id=18]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
@@ -64,6 +68,11 @@ position = Vector2( 745, 207 )
 position = Vector2( 44.8985, 253.226 )
 scale = Vector2( 1.5, 1.5 )
 
+[node name="MusicJump" type="AudioStreamPlayer2D" parent="PlayerNode"]
+position = Vector2( -29.9323, -168.817 )
+scale = Vector2( 0.666667, 0.666667 )
+stream = ExtResource( 15 )
+
 [node name="Jjokji" parent="." instance=ExtResource( 5 )]
 position = Vector2( 308, -13 )
 script = ExtResource( 7 )
@@ -93,6 +102,16 @@ position = Vector2( -0.376892, 0 )
 drag_margin_v_enabled = false
 
 [node name="UI_Group" parent="CameraRoot" instance=ExtResource( 8 )]
+
+[node name="MusicDoor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+volume_db = 9.634
+
+[node name="MusicCollect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
+
+[node name="MusicFail" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 18 )
 
 [connection signal="body_entered" from="Door_lf_inToZ" to="Door_rt_inToX" method="_on_fromLeftDoor_body_entered"]
 [connection signal="body_entered" from="Door_lf_inToZ" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]

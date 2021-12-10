@@ -16,5 +16,6 @@ func _on_Jjokji_body_entered(body):
 	yield(animationPlayer, "animation_finished")
 	global_vars.jjokji2 = false
 	self.queue_free()
+	get_node("/root/World/MusicCollect").play()
 
 

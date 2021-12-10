@@ -15,6 +15,7 @@ func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		if(get_overlapping_bodies().size() > 0):
 			_to_other_scene()
+			get_node("/root/World/MusicDoor").play()
 
 func _to_other_scene():
 	get_tree().change_scene(path_to_scene)
