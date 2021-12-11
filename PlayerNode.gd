@@ -112,16 +112,17 @@ func _physics_process(delta):
 	# go to return point when player goes out of the screen       
 	if self.get_position().y > get_viewport_rect().size.y:
 		updatePos(return_pos.x, return_pos.y)
-		player_vars.life -= 1
-		get_node("/root/World/MusicFail").play()
-		print("fall")
-		match[player_vars.life]:
-			[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
-			[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
-			[0]:
-				get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
-				get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
-				get_tree().paused = true
+		if not (player_vars.jjokji1 == false and player_vars.jjokji2 == false and player_vars.jjokji3 == false and player_vars.jjokji4 == false and player_vars.jjokji5 == false and player_vars.jjokji6 == false and player_vars.jjokji7 == false):
+			player_vars.life -= 1
+			get_node("/root/World/MusicFail").play()
+			print("fall")
+			match[player_vars.life]:
+				[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+				[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
+				[0]:
+					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
+					get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
+					get_tree().paused = true
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 	move_and_slide(velocity, Vector2(0, -1))
@@ -133,25 +134,26 @@ func _physics_process(delta):
 			print("hello")
 			if if_collide_enemy == false :
 				print("Collided with: ", collision.collider.name)
-				player_vars.life -= 1
-				get_node("/root/World/MusicFail").play()
-				match[player_vars.life]:
-					[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
-					[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
-					[0]:
-						get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
-						get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
-						get_tree().paused = true
+				if not (player_vars.jjokji1 == false and player_vars.jjokji2 == false and player_vars.jjokji3 == false and player_vars.jjokji4 == false and player_vars.jjokji5 == false and player_vars.jjokji6 == false and player_vars.jjokji7 == false):
+					player_vars.life -= 1
+					get_node("/root/World/MusicFail").play()
+					match[player_vars.life]:
+						[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+						[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
+						[0]:
+							get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
+							get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
+							get_tree().paused = true
 				
 
-				if player_vars.life > 0 :
-					if_collide_enemy = true
-					get_tree().paused = true
-					yield(get_tree().create_timer(1.0), "timeout")
-					get_tree().paused = false
-					self.set_position(restart_pos)
-					yield(get_tree().create_timer(1.0), "timeout")
-					if_collide_enemy = false
+					if player_vars.life > 0 :
+						if_collide_enemy = true
+						get_tree().paused = true
+						yield(get_tree().create_timer(1.0), "timeout")
+						get_tree().paused = false
+						self.set_position(restart_pos)
+						yield(get_tree().create_timer(1.0), "timeout")
+						if_collide_enemy = false
 				
 
 	#if(CameraRoot is.... ready):

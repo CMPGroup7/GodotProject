@@ -15,4 +15,6 @@ func reTransition():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
 		get_tree().change_scene("res://FinalScene.tscn")
+	if anim_name == "fade_to_normal":
+		self.queue_free()
 

@@ -35,13 +35,11 @@ position = Vector2( 1148.43, 167.966 )
 path_to_scene = "res://Level_OutsideXZ.tscn"
 
 [node name="Door_lf_inToZ" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( -1.4689, 274 )
 scale = Vector2( 0.2, 9.24 )
 path_to_scene = "res://Level_InsideZ.tscn"
 
 [node name="Door_rt_inToX" parent="." instance=ExtResource( 2 )]
-visible = false
 position = Vector2( 1232.53, 276 )
 scale = Vector2( 0.2, 9.32 )
 
