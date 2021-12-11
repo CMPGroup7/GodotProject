@@ -54,6 +54,7 @@ func _process(delta):
 					get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
 					get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
 					get_tree().paused = true
+	
 
 func _physics_process(delta):
 	

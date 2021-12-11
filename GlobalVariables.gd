@@ -18,3 +18,5 @@ var jjokji6 = true
 var jjokji7 = true
 
 var master_sound = AudioServer.get_bus_index("Master")
+
+var finish_timing = false
