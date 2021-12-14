@@ -1,32 +1,50 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://Images/back_button.png" type="Texture" id=2]
+[ext_resource path="res://Images/tutorial_background.jpg" type="Texture" id=3]
 
 [node name="Tutorial" type="Node2D"]
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 511, 301 )
+scale = Vector2( 0.722337, 0.722337 )
+texture = ExtResource( 3 )
+
 [node name="TutorialLabel" type="RichTextLabel" parent="."]
-margin_left = 85.0
-margin_top = 157.0
-margin_right = 576.0
-margin_bottom = 312.0
+anchor_right = 0.047
+margin_left = 37.0
+margin_top = 165.0
+margin_right = 497.0
+margin_bottom = 274.0
 rect_scale = Vector2( 2.08773, 2.08773 )
-text = "Use the arrow key to move left and right.
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center] Use the arrow key to move left and right.
 
 Jump using the space bar.
 
 Press the enter in front of the door to open the door.
 
-Collect the notes to complete the words and escape the gift box!"
+Collect the notes to complete the words and escape the gift box! [/center] "
+text = " Use the arrow key to move left and right.
+
+Jump using the space bar.
+
+Press the enter in front of the door to open the door.
+
+Collect the notes to complete the words and escape the gift box!  "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackButton" type="Button" parent="."]
-margin_left = 41.0
-margin_top = 522.0
-margin_right = 214.0
-margin_bottom = 572.0
-text = "Back"
+margin_left = 30.0
+margin_top = 505.0
+margin_right = 216.0
+margin_bottom = 576.0
+icon = ExtResource( 2 )
+flat = true
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
