@@ -5,11 +5,18 @@
 [node name="Tutorial" type="Node2D"]
 
 [node name="TutorialLabel" type="RichTextLabel" parent="."]
-margin_left = 457.0
-margin_top = 258.0
-margin_right = 630.0
-margin_bottom = 423.0
-text = "Tutorial~ blabla"
+margin_left = 85.0
+margin_top = 157.0
+margin_right = 576.0
+margin_bottom = 312.0
+rect_scale = Vector2( 2.08773, 2.08773 )
+text = "Use the arrow key to move left and right.
+
+Jump using the space bar.
+
+Press the enter in front of the door to open the door.
+
+Collect the notes to complete the words and escape the gift box!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
