@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Door.png" type="Texture" id=1]
+[ext_resource path="res://Images/door.png" type="Texture" id=1]
 [ext_resource path="res://DoorScript.gd" type="Script" id=2]
 
 [node name="Door" type="Area2D"]
@@ -12,7 +12,8 @@ script = ExtResource( 2 )
 polygon = PoolVector2Array( -17.8417, -45, 15.5364, -45, 16.5181, 32, -16.86, 32 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.140845, 0.140845 )
+position = Vector2( 0, -1.42153 )
+scale = Vector2( 0.0723699, 0.0723699 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 510.862, 655.32 )
+region_rect = Rect2( 455.539, 425.949, 938.255, 1086.2 )

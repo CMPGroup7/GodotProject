@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://CameraRootNode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tilemap.tres" type="TileSet" id=2]
@@ -13,9 +13,15 @@
 [ext_resource path="res://MusicCollect.wav" type="AudioStream" id=11]
 [ext_resource path="res://MusicFail.wav" type="AudioStream" id=12]
 [ext_resource path="res://MusicJump.wav" type="AudioStream" id=13]
+[ext_resource path="res://Images/inside_back.png" type="Texture" id=14]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 643, 175 )
+scale = Vector2( 3.99571, 2.86 )
+texture = ExtResource( 14 )
 
 [node name="Door_X1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 161.154, 263.092 )

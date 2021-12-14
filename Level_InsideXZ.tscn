@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://tilemap.tres" type="TileSet" id=1]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=2]
@@ -18,9 +18,21 @@
 [ext_resource path="res://MusicDoor.wav" type="AudioStream" id=16]
 [ext_resource path="res://MusicCollect.wav" type="AudioStream" id=17]
 [ext_resource path="res://MusicFail.wav" type="AudioStream" id=18]
+[ext_resource path="res://Images/outside1_back.png" type="Texture" id=19]
+[ext_resource path="res://Images/outside2_back.png" type="Texture" id=20]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 937.699, 251.776 )
+scale = Vector2( 0.546192, 0.540968 )
+texture = ExtResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 306.875, 253 )
+scale = Vector2( 0.545044, 0.539307 )
+texture = ExtResource( 19 )
 
 [node name="Door_X1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 162.076, 263.541 )
@@ -35,11 +47,13 @@ position = Vector2( 1148.43, 167.966 )
 path_to_scene = "res://Level_OutsideXZ.tscn"
 
 [node name="Door_lf_inToZ" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( -1.4689, 274 )
 scale = Vector2( 0.2, 9.24 )
 path_to_scene = "res://Level_InsideZ.tscn"
 
 [node name="Door_rt_inToX" parent="." instance=ExtResource( 2 )]
+visible = false
 position = Vector2( 1232.53, 276 )
 scale = Vector2( 0.2, 9.32 )
 
