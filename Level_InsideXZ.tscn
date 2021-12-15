@@ -124,11 +124,10 @@ stream = ExtResource( 17 )
 
 [node name="MusicFail" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 18 )
-
-[connection signal="body_entered" from="Door_lf_inToZ" to="Door_rt_inToX" method="_on_fromLeftDoor_body_entered"]
 [connection signal="body_entered" from="Door_lf_inToZ" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
-[connection signal="body_entered" from="Door_rt_inToX" to="Door_lf_inToZ" method="_on_fromRightDoor_body_entered"]
+[connection signal="body_entered" from="Door_lf_inToZ" to="Door_rt_inToX" method="_on_fromLeftDoor_body_entered"]
 [connection signal="body_entered" from="Door_rt_inToX" to="CameraRoot" method="_on_SameLevelDoor_body_entered"]
+[connection signal="body_entered" from="Door_rt_inToX" to="Door_lf_inToZ" method="_on_fromRightDoor_body_entered"]
 [connection signal="body_entered" from="Jjokji" to="Jjokji" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji2" to="Jjokji2" method="_on_Jjokji_body_entered"]
 [connection signal="body_entered" from="Jjokji3" to="Jjokji3" method="_on_Jjokji_body_entered"]
@@ -137,8 +136,13 @@ stream = ExtResource( 18 )
 [connection signal="body_entered" from="Jjokji6" to="Jjokji6" method="_on_Jjokji_body_entered"]
 
 [editable path="Jjokji"]
+
 [editable path="Jjokji2"]
+
 [editable path="Jjokji3"]
+
 [editable path="Jjokji4"]
+
 [editable path="Jjokji5"]
+
 [editable path="Jjokji6"]

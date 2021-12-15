@@ -1,15 +1,20 @@
 extends Button
 
+#Store global variables as local variable
 onready var player_vars = get_node("/root/GlobalVariables")
 
+#Open first level scene
 func _on_StartButton_pressed():
 	get_tree().change_scene("res://Level_InsideXZ.tscn")
 
+#Open Tutorial scene
 func _on_TutorialButton_pressed():
 	get_tree().change_scene("res://Tutorial.tscn")
 
+#Go back from Tutorial scene to Start scene
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://Start.tscn")
+
 
 func _on_GoHome_pressed():
 	player_vars.life = 3

@@ -64,5 +64,4 @@ __meta__ = {
 anims/RESET = SubResource( 1 )
 anims/fade_to_black = SubResource( 2 )
 anims/fade_to_normal = SubResource( 3 )
-
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

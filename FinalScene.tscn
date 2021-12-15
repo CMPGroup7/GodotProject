@@ -28,5 +28,4 @@ __meta__ = {
 }
 
 [node name="TransitionScene" parent="." instance=ExtResource( 2 )]
-
 [connection signal="pressed" from="GoHome" to="GoHome" method="_on_GoHome_pressed"]

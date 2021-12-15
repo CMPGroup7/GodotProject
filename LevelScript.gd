@@ -5,13 +5,13 @@ onready var player_vars = get_node("/root/GlobalVariables")
 const Transition = preload("res://TransitionScene.tscn")
 
 func _ready():
-	print(GlobalVariables.cur_door)
-
-	if(GlobalVariables.cur_door):
-		var door_node = find_node(GlobalVariables.cur_door)
-		if door_node:
-			$PlayerNode.global_position = door_node.global_position
-			$PlayerNode.restart_pos = door_node.global_position
+	#print(GlobalVariables.cur_door)
+#Checks if a door has been picked upon loading level
+	if(GlobalVariables.cur_door): #If not null
+		var door_node = find_node(GlobalVariables.cur_door) #Look for it
+		if door_node: #Double-check
+			$PlayerNode.global_position = door_node.global_position #Set player position
+			$PlayerNode.restart_pos = door_node.global_position #And restart position
 
 func _process(delta):
 	
@@ -23,5 +23,3 @@ func _process(delta):
 				#get_tree().change_scene("res://FinalScene.tscn")
 			
 
-#func _on_TransitionScene_transitioned():
-#	get_tree().change_scene("res://FinalScene.tscn")

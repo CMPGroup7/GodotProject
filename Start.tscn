@@ -50,6 +50,5 @@ text = "CMP Group 7 - Nori David, Kim Yejin, Kim Gyeongjin
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="TutorialButton" to="StartButton" method="_on_TutorialButton_pressed"]

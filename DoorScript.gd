@@ -12,7 +12,7 @@ func _ready():
 	
 
 func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept"): # Player presses E or the Enter key
 		if(get_overlapping_bodies().size() > 0):
 			_to_other_scene()
 			get_node("/root/World/MusicDoor").play()

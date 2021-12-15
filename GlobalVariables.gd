@@ -21,3 +21,11 @@ var master_sound = AudioServer.get_bus_index("Master")
 
 var finish_timing = false
 
+func cheat():
+	jjokji1 = false
+	jjokji2 = false
+	jjokji3 = false
+	jjokji4 = false
+	jjokji5 = false
+	jjokji6 = false
+	jjokji7 = false

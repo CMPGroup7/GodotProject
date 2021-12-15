@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Christmas.wav-99e227256988b4b0472d2bbf7689dc1a.sample"
+
+[deps]
+
+source_file="res://Christmas.wav"
+dest_files=[ "res://.import/Christmas.wav-99e227256988b4b0472d2bbf7689dc1a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
