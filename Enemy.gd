@@ -5,11 +5,11 @@ const enemy_gravity = 200.0
 var WALK_SPEED = 20
 var change_direction = false
 
-onready var animationPlayer = $AnimationPlayer
-onready var tile_rayCast = get_node("DetectTile")
-onready var playerTop_rayCast = get_node("DetectPlayerTop")
+onready var animationPlayer = $AnimationPlayer  #enemy animation
+onready var tile_rayCast = get_node("DetectTile") # raycast for detect tile whether enemy should change direction
+onready var playerTop_rayCast = get_node("DetectPlayerTop") 
 
-
+#enemy's movement
 func _physics_process(delta):
 	
 	animationPlayer.play("enemy_walk")
@@ -21,7 +21,7 @@ func _physics_process(delta):
 	
 	try_interact_tile()
 
-
+# A function that makes enemy to move back and forth on the block
 func try_interact_tile():
 
 	var collider = tile_rayCast.get_collider()

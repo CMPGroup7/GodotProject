@@ -8,6 +8,7 @@ var camY_pos = 0
 func _ready():
 	pass # Replace with function body.
 
+# set position of UI group and cameraroot
 func updatePos(valueY):
 	if(valueY >= self.drag_margin_bottom):
 		self.set_position(Vector2(0, valueY))
@@ -19,6 +20,7 @@ func updatePos(valueY):
 	elif(valueY <= self.drag_margin_bottom):
 		self.set_position(Vector2(0, valueY))
 
+# A function that change position of camera and ui group when player go to side next to it.
 func _on_camX_area_entered(body):
 	if(body is PlayerNode):
 		if($Cam_Z.current == true):
@@ -28,6 +30,7 @@ func _on_camX_area_entered(body):
 			$Cam_X.current = true
 			$UI_Group.set_position(Vector2(0, 0))
 
+# A function that change position of camera and ui group when player go to side next to it.
 func _on_camZ_area_entered(body):
 	if body is PlayerNode:
 		if($Cam_X.current == true):

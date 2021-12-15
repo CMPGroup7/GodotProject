@@ -1,16 +1,17 @@
 extends Area2D
 class_name Collectables2
 
-onready var animationPlayer = $AnimationPlayer
-onready var global_vars = get_node("/root/GlobalVariables")
+onready var animationPlayer = $AnimationPlayer # animation for collectables
+onready var global_vars = get_node("/root/GlobalVariables") # get global variables
 
 var exist = null
 
+# If the note is not collected by checking whether it is collected, it will not be shown.
 func _ready():
 	exist = global_vars.jjokji2
 	if not exist:
 		queue_free()
-
+# collect note. play animation for jjokji. show what message that player collected
 func _on_Jjokji_body_entered(body):
 	animationPlayer.play("OpenJjokji")
 	yield(animationPlayer, "animation_finished")

@@ -87,7 +87,7 @@ func _physics_process(delta):
 		else:
 			jump_count = 0
 
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left"): 
 		if is_on_floor():
 			animationPlayer.play("WalkLeft")
 			velocity.x = -WALK_SPEED

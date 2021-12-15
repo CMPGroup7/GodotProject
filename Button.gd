@@ -15,7 +15,7 @@ func _on_TutorialButton_pressed():
 func _on_BackButton_pressed():
 	get_tree().change_scene("res://Start.tscn")
 
-
+# initialize global values so that player can play game again
 func _on_GoHome_pressed():
 	player_vars.life = 3
 	player_vars.collected = 0
