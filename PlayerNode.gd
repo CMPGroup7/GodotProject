@@ -130,6 +130,14 @@ func _physics_process(delta):
 			player_vars.life -= 1
 			get_node("/root/World/MusicFail").play()
 			print("fall")
+			match[player_vars.life]: #To avoid player not dying and getting Game Over in the end
+						
+						[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+						[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
+						[0]: 
+							get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
+							get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
+							get_tree().paused = true
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 	move_and_slide(velocity, Vector2(0, -1))
@@ -146,8 +154,8 @@ func _physics_process(delta):
 					get_node("/root/World/MusicFail").play()
 					match[player_vars.life]: #To avoid player not dying and getting Game Over in the end
 						
-					#	[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
-					#	[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
+						[2]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life").queue_free()
+						[1]:get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life2").queue_free()
 						[0]: 
 							get_node("/root/World/CameraRoot/UI_Group/LifeGroup/Life3").queue_free()
 							get_node("/root/World/CameraRoot/UI_Group/GameOver").visible = true
